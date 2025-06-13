@@ -16,6 +16,17 @@ class _LoginViewState extends State<LoginView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Transform.rotate(
+              angle: -0.5,
+              child: Icon(
+                Icons.favorite_border,
+                size: 100,
+                color: const Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+
+            SizedBox(height: 50),
+
             // campo usuario
             SizedBox(
               width: size.width * 0.8,
@@ -98,18 +109,8 @@ class _LoginViewState extends State<LoginView> {
                 // botón de verificación de credenciales
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(
-                  221,
-                  255,
-                  255,
-                  255,
-                ), // Sin fondo
-                foregroundColor: const Color.fromARGB(
-                  255,
-                  0,
-                  0,
-                  0,
-                ), // Color del texto
+                backgroundColor: const Color.fromARGB(221, 255, 255, 255),
+                foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 150,
                   vertical: 16,
@@ -125,10 +126,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               child: const Text(
                 'Iniciar Sesión',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold, // Para que resalte más
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
 
