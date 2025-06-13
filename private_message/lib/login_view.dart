@@ -12,6 +12,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +110,7 @@ class _LoginViewState extends State<LoginView> {
                 // botón de verificación de credenciales
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(221, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 150,
@@ -150,7 +151,7 @@ class _LoginViewState extends State<LoginView> {
 
             ElevatedButton(
               onPressed: () {
-                //te mada a crear tu tuenta
+                //te mada a crear tu cuenta
               },
               style: ElevatedButton.styleFrom(
                 foregroundColor: const Color.fromARGB(255, 0, 0, 0),
