@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:private_message/account_creation_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -123,7 +124,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
 
-                const SizedBox(height: 12),
+                const SizedBox(height: 20),
 
                 // texto ¿Olvidaste tu contraseña?
                 GestureDetector(
@@ -141,7 +142,14 @@ class _LoginViewState extends State<LoginView> {
 
                 // botón crear cuenta
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AccountCreationView(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,

@@ -95,7 +95,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                     child: TextField(
                       controller: _dd,
                       decoration: InputDecoration(
-                        hintText: _dd.text.isEmpty ? '' : null,
+                        hintText: _dd.text.isEmpty ? 'DD' : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -108,7 +108,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                     child: TextField(
                       controller: _mm,
                       decoration: InputDecoration(
-                        hintText: _mm.text.isEmpty ? '' : null,
+                        hintText: _mm.text.isEmpty ? 'MM' : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -121,7 +121,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                     child: TextField(
                       controller: _aa,
                       decoration: InputDecoration(
-                        hintText: _aa.text.isEmpty ? '' : null,
+                        hintText: _aa.text.isEmpty ? 'AA' : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -154,6 +154,21 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       controller: _hombre,
                       decoration: InputDecoration(
                         hintText: _hombre.text.isEmpty ? 'hombre' : null,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      onChanged: (_) => setState(() {}),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: TextField(
+                      controller: _pesonalizado,
+                      decoration: InputDecoration(
+                        hintText: _pesonalizado.text.isEmpty
+                            ? 'pesonalizado'
+                            : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -221,6 +236,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
+              SizedBox(height: 20),
               TextButton(
                 onPressed: () {
                   Navigator.pushReplacement(
@@ -233,6 +249,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                   style: TextStyle(color: Colors.black),
                 ),
               ),
+              SizedBox(height: 12),
             ],
           ),
         ),
