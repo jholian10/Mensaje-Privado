@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MessageView extends StatefulWidget {
@@ -24,10 +25,45 @@ class _MessageViewState extends State<MessageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Mensajes"),
-        backgroundColor: Colors.deepPurple,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            // lógica de ir atras
+          },
+        ),
+        title: Row(
+          children: [
+            CircleAvatar(
+              radius: 18,
+              backgroundImage: NetworkImage(
+                'https://tse3.mm.bing.net/th?id=OIP.Gs7Vj7yBU5-9oMGTemYj3gHaGk&pid=Api&P=0&h=180',
+              ),
+              // Si no tienes una imagen aún:
+              // child: Icon(Icons.person),
+            ),
+            const SizedBox(width: 10),
+            Row(children: [const Text("Jholian manuel")]),
+            Column(children: [const Text("estavo activo")]),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.phone),
+            onPressed: () {
+              //logica de llamada
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.videocam),
+            onPressed: () {
+              //logica de video llamada
+            },
+          ),
+        ],
       ),
+
       body: Column(
         children: [
           Expanded(
