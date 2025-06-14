@@ -155,6 +155,7 @@ class _LoginViewState extends State<LoginView> {
               },
               style: ElevatedButton.styleFrom(
                 foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                backgroundColor: Colors.white,
                 minimumSize: const Size(400, 60),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
@@ -164,6 +165,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
               ),
+
               child: const Text(
                 'Crear cuenta',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
