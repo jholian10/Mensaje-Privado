@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:private_message/account_creation_view.dart';
+import 'package:private_message/message_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,9 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AccountCreationView(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MessageView());
   }
 }
