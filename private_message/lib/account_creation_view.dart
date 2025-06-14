@@ -91,42 +91,89 @@ class _AccountCreationViewState extends State<AccountCreationView> {
               SizedBox(height: 20),
               Row(
                 children: [
+                  // Día (DD)
                   Expanded(
-                    child: TextField(
-                      controller: _dd,
+                    child: DropdownButtonFormField<String>(
+                      value: _dd.text.isNotEmpty ? _dd.text : null,
                       decoration: InputDecoration(
-                        hintText: _dd.text.isEmpty ? 'DD' : null,
+                        hintText: 'DD',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      onChanged: (_) => setState(() {}),
+                      items: List.generate(31, (index) {
+                        final day = (index + 1).toString().padLeft(2, '0');
+                        return DropdownMenuItem(value: day, child: Text(day));
+                      }),
+                      onChanged: (value) {
+                        setState(() {
+                          _dd.text = value!;
+                        });
+                      },
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 8),
+
+                  // Mes (MM)
                   Expanded(
-                    child: TextField(
-                      controller: _mm,
+                    child: DropdownButtonFormField<String>(
+                      value: _mm.text.isNotEmpty ? _mm.text : null,
                       decoration: InputDecoration(
-                        hintText: _mm.text.isEmpty ? 'MM' : null,
+                        hintText: 'Mes',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      onChanged: (_) => setState(() {}),
+                      items:
+                          const [
+                                'Enero',
+                                'Febrero',
+                                'Marzo',
+                                'Abril',
+                                'Mayo',
+                                'Junio',
+                                'Julio',
+                                'Agosto',
+                                'Septiembre',
+                                'Octubre',
+                                'Noviembre',
+                                'Diciembre',
+                              ]
+                              .map(
+                                (month) => DropdownMenuItem(
+                                  value: month,
+                                  child: Text(month),
+                                ),
+                              )
+                              .toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _mm.text = value!;
+                        });
+                      },
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 8),
+
+                  // Año (YYYY)
                   Expanded(
-                    child: TextField(
-                      controller: _aa,
+                    child: DropdownButtonFormField<String>(
+                      value: _aa.text.isNotEmpty ? _aa.text : null,
                       decoration: InputDecoration(
-                        hintText: _aa.text.isEmpty ? 'AA' : null,
+                        hintText: 'Año',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      onChanged: (_) => setState(() {}),
+                      items: List.generate(28, (index) {
+                        final year = (1980 + index).toString();
+                        return DropdownMenuItem(value: year, child: Text(year));
+                      }),
+                      onChanged: (value) {
+                        setState(() {
+                          _aa.text = value!;
+                        });
+                      },
                     ),
                   ),
                 ],
@@ -187,7 +234,9 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                     child: TextField(
                       controller: _correo,
                       decoration: InputDecoration(
-                        hintText: _correo.text.isEmpty ? 'correo' : null,
+                        hintText: _correo.text.isEmpty
+                            ? 'Correo electrónico o número de teléfono'
+                            : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
