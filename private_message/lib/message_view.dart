@@ -24,7 +24,7 @@ class _MessageViewState extends State<MessageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Fondo exterior negro
+      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.all(5),
         decoration: BoxDecoration(
@@ -49,6 +49,7 @@ class _MessageViewState extends State<MessageView> {
                       Navigator.pop(context);
                     },
                   ),
+                  const SizedBox(width: 5),
                   const CircleAvatar(
                     radius: 18,
                     backgroundImage: NetworkImage(
@@ -62,18 +63,21 @@ class _MessageViewState extends State<MessageView> {
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
                   ),
+                  SizedBox(width: 10),
                   IconButton(
                     icon: const Icon(Icons.phone, color: Colors.black),
                     onPressed: () {
                       // lógica de llamada
                     },
                   ),
+                  const SizedBox(width: 10),
                   IconButton(
                     icon: const Icon(Icons.videocam, color: Colors.black),
                     onPressed: () {
                       // lógica de videollamada
                     },
                   ),
+                  const SizedBox(width: 10),
                 ],
               ),
             ),
