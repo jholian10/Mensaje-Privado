@@ -17,7 +17,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
   final TextEditingController _aa = TextEditingController();
   final TextEditingController _mujer = TextEditingController();
   final TextEditingController _hombre = TextEditingController();
-  final TextEditingController _pesonalizado = TextEditingController();
+  final TextEditingController _resevado = TextEditingController();
   final TextEditingController _correo = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
@@ -31,7 +31,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
     _aa.dispose();
     _mujer.dispose();
     _hombre.dispose();
-    _pesonalizado.dispose();
+    _resevado.dispose();
     _correo.dispose();
     _password.dispose();
     super.dispose();
@@ -180,47 +180,115 @@ class _AccountCreationViewState extends State<AccountCreationView> {
               ),
 
               const SizedBox(height: 20),
-
               Row(
                 children: [
+                  // Mujer
                   Expanded(
-                    child: TextField(
-                      controller: _mujer,
-                      decoration: InputDecoration(
-                        hintText: _mujer.text.isEmpty ? 'mujer' : null,
-                        border: OutlineInputBorder(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _seleccion = 'Mujer';
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(12),
                         ),
+                        child: Row(
+                          children: [
+                            Radio<String>(
+                              value: 'Mujer',
+                              groupValue: _seleccion,
+                              onChanged: (value) {
+                                setState(() {
+                                  _seleccion = value!;
+                                });
+                              },
+                            ),
+                            const SizedBox(width: 6),
+                            const Text('Mujer'),
+                          ],
+                        ),
                       ),
-                      onChanged: (_) => setState(() {}),
                     ),
                   ),
                   const SizedBox(width: 12),
+
+                  // Hombre
                   Expanded(
-                    child: TextField(
-                      controller: _hombre,
-                      decoration: InputDecoration(
-                        hintText: _hombre.text.isEmpty ? 'hombre' : null,
-                        border: OutlineInputBorder(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _seleccion = 'Hombre';
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(12),
                         ),
+                        child: Row(
+                          children: [
+                            Radio<String>(
+                              value: 'Hombre',
+                              groupValue: _seleccion,
+                              onChanged: (value) {
+                                setState(() {
+                                  _seleccion = value!;
+                                });
+                              },
+                            ),
+                            const SizedBox(width: 6),
+                            const Text('Hombre'),
+                          ],
+                        ),
                       ),
-                      onChanged: (_) => setState(() {}),
                     ),
                   ),
                   const SizedBox(width: 12),
+
+                  // Reservado
                   Expanded(
-                    child: TextField(
-                      controller: _pesonalizado,
-                      decoration: InputDecoration(
-                        hintText: _pesonalizado.text.isEmpty
-                            ? 'pesonalizado'
-                            : null,
-                        border: OutlineInputBorder(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _seleccion = 'Reservado';
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(12),
                         ),
+                        child: Row(
+                          children: [
+                            Radio<String>(
+                              value: 'Reservado',
+                              groupValue: _seleccion,
+                              onChanged: (value) {
+                                setState(() {
+                                  _seleccion = value!;
+                                });
+                              },
+                            ),
+                            const SizedBox(width: 6),
+                            const Text('Reservado'),
+                          ],
+                        ),
                       ),
-                      onChanged: (_) => setState(() {}),
                     ),
                   ),
                 ],
@@ -270,6 +338,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
               // Botón crear cuenta
               ElevatedButton(
                 onPressed: () {
+                  print('Género seleccionado: $_seleccion');
                   // Lógica para registrar cuenta
                 },
                 style: ElevatedButton.styleFrom(
@@ -306,3 +375,5 @@ class _AccountCreationViewState extends State<AccountCreationView> {
     );
   }
 }
+
+String _seleccion = '';
