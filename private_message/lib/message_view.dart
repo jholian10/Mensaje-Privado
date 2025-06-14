@@ -34,9 +34,9 @@ class _MessageViewState extends State<MessageView> {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 241, 241, 241),
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(10),
                 ),
@@ -116,16 +116,34 @@ class _MessageViewState extends State<MessageView> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.emoji_emotions, color: Colors.black),
+                    icon: const Icon(Icons.add, color: Colors.black),
                     onPressed: () {
-                      // lógica emoji
+                      // lógica agrgar archivo
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.camera_alt, color: Colors.black),
+                    onPressed: () {
+                      // lógica de entrar a camara
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.image, color: Colors.black),
+                    onPressed: () {
+                      // lógica de envira imagen
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.mic, color: Colors.black),
+                    onPressed: () {
+                      // lógica de gravar audio
                     },
                   ),
                   Expanded(
                     child: TextField(
                       controller: _controller,
                       decoration: InputDecoration(
-                        hintText: "Escribe un mensaje...",
+                        hintText: "Aa",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -138,9 +156,9 @@ class _MessageViewState extends State<MessageView> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.mic, color: Colors.black),
+                    icon: const Icon(Icons.emoji_emotions, color: Colors.black),
                     onPressed: () {
-                      // lógica de audio
+                      // lógica de emogi
                     },
                   ),
                   IconButton(
