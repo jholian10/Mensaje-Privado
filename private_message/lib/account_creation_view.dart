@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:private_message/login_view.dart';
 
 class AccountCreationView extends StatefulWidget {
   const AccountCreationView({super.key});
@@ -11,27 +12,28 @@ class _AccountCreationViewState extends State<AccountCreationView> {
   final TextEditingController _nombre = TextEditingController();
   final TextEditingController _apellido = TextEditingController();
   final TextEditingController _birthdateController = TextEditingController();
-  final TextEditingController _bb = TextEditingController();
+  final TextEditingController _dd = TextEditingController();
   final TextEditingController _mm = TextEditingController();
   final TextEditingController _aa = TextEditingController();
-  final TextEditingController _hombre = TextEditingController();
   final TextEditingController _mujer = TextEditingController();
-  final TextEditingController _personalizado = TextEditingController();
+  final TextEditingController _hombre = TextEditingController();
+  final TextEditingController _pesonalizado = TextEditingController();
   final TextEditingController _correo = TextEditingController();
-  final TextEditingController _contrasena = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+
   @override
   void dispose() {
     _nombre.dispose();
     _apellido.dispose();
-    _bb.dispose();
+    _birthdateController.dispose();
+    _dd.dispose();
     _mm.dispose();
     _aa.dispose();
-    _hombre.dispose();
     _mujer.dispose();
-    _personalizado.dispose();
+    _hombre.dispose();
+    _pesonalizado.dispose();
     _correo.dispose();
-    _contrasena.dispose();
-    _birthdateController.dispose();
+    _password.dispose();
     super.dispose();
   }
 
@@ -86,14 +88,14 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                   ),
                 ],
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Expanded(
                     child: TextField(
-                      controller: _bb,
+                      controller: _dd,
                       decoration: InputDecoration(
-                        hintText: _bb.text.isEmpty ? '15' : null,
+                        hintText: _dd.text.isEmpty ? '' : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -106,7 +108,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                     child: TextField(
                       controller: _mm,
                       decoration: InputDecoration(
-                        hintText: _mm.text.isEmpty ? 'enero' : null,
+                        hintText: _mm.text.isEmpty ? '' : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -119,7 +121,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                     child: TextField(
                       controller: _aa,
                       decoration: InputDecoration(
-                        hintText: _aa.text.isEmpty ? 'año' : null,
+                        hintText: _aa.text.isEmpty ? '' : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -130,7 +132,8 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                 ],
               ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
+
               Row(
                 children: [
                   Expanded(
@@ -158,13 +161,36 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       onChanged: (_) => setState(() {}),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              Row(
+                children: [
                   Expanded(
                     child: TextField(
-                      controller: _personalizado,
+                      controller: _correo,
                       decoration: InputDecoration(
-                        hintText: _personalizado.text.isEmpty
-                            ? 'pesonalizado'
+                        hintText: _correo.text.isEmpty ? 'correo' : null,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      onChanged: (_) => setState(() {}),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: _password,
+                      decoration: InputDecoration(
+                        hintText: _password.text.isEmpty
+                            ? 'contraseña nueva'
                             : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -175,31 +201,9 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                   ),
                 ],
               ),
-              Expanded(
-                child: TextField(
-                  controller: _correo,
-                  decoration: InputDecoration(
-                    hintText: _correo.text.isEmpty ? 'Nombre' : null,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onChanged: (_) => setState(() {}),
-                ),
-              ),
-              Expanded(
-                child: TextField(
-                  controller: _contrasena,
-                  decoration: InputDecoration(
-                    hintText: _contrasena.text.isEmpty ? 'Nombre' : null,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onChanged: (_) => setState(() {}),
-                ),
-              ),
+
               SizedBox(height: 40),
+              // Botón crear cuenta
               ElevatedButton(
                 onPressed: () {
                   // Lógica para registrar cuenta
@@ -213,8 +217,20 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                   ),
                 ),
                 child: const Text(
-                  'Crear cuenta',
+                  'Registrarme',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginView()),
+                  );
+                },
+                child: const Text(
+                  '¿Ya tienes cuenta?',
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
             ],
