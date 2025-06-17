@@ -37,7 +37,9 @@ class _FriendsViewState extends State<FriendsView> {
           elevation: 4,
           leading: IconButton(
             icon: const Icon(Icons.menu, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              //logica de menu
+            },
           ),
           title: const Text(
             'Mis Amigos',
