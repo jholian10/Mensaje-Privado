@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:private_message/error_view.dart';
+import 'package:private_message/my_views/error_view.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:private_message/message_view.dart';
+import 'package:private_message/my_views/message_view.dart';
 
 class FriendsView extends StatefulWidget {
   const FriendsView({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:private_message/account_creation_view.dart';
+import 'package:private_message/my_views/account_creation_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
