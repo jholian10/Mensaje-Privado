@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:private_message/loading_view.dart';
+import 'package:private_message/error_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoadingView());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ErrorView());
   }
 }
