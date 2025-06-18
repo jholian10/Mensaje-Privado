@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:private_message/my_views/message_view.dart';
+import 'package:private_message/my_views/setin_view.dart';
 
 class FriendsView extends StatefulWidget {
   const FriendsView({super.key});
@@ -39,6 +40,10 @@ class _FriendsViewState extends State<FriendsView> {
             icon: const Icon(Icons.menu, color: Colors.black),
             onPressed: () {
               //logica de menu
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const SetinView()),
+              );
             },
           ),
           title: const Text(
