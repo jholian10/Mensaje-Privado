@@ -88,7 +88,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 15),
               Row(
                 children: [
                   // Día (DD)
@@ -112,7 +112,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       },
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: 5),
 
                   // Mes (MM)
                   Expanded(
@@ -153,7 +153,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       },
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: 5),
 
                   // Año (YYYY)
                   Expanded(
@@ -179,7 +179,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                 ],
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               Row(
                 children: [
                   // Mujer
@@ -192,8 +192,8 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 10,
+                          horizontal: 5,
+                          vertical: 4,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
@@ -210,14 +210,13 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                                 });
                               },
                             ),
-                            const SizedBox(width: 6),
-                            const Text('Mujer'),
+                            const Text('M'),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 6),
 
                   // Hombre
                   Expanded(
@@ -229,8 +228,8 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 10,
+                          horizontal: 5,
+                          vertical: 4,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
@@ -247,14 +246,13 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                                 });
                               },
                             ),
-                            const SizedBox(width: 6),
-                            const Text('Hombre'),
+                            const Text('H'),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 6),
 
                   // Reservado
                   Expanded(
@@ -266,8 +264,8 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 10,
+                          horizontal: 10,
+                          vertical: 5,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
@@ -284,8 +282,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                                 });
                               },
                             ),
-                            const SizedBox(width: 6),
-                            const Text('Reservado'),
+                            const Text('R'),
                           ],
                         ),
                       ),
@@ -294,7 +291,7 @@ class _AccountCreationViewState extends State<AccountCreationView> {
                 ],
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 15),
 
               Row(
                 children: [

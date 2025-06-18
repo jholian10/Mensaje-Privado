@@ -102,7 +102,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
 
                 // botón iniciar sesión
                 ElevatedButton(
@@ -119,7 +119,7 @@ class _LoginViewState extends State<LoginView> {
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 150,
+                      horizontal: 30,
                       vertical: 16,
                     ),
                     shape: RoundedRectangleBorder(
@@ -133,7 +133,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
 
                 // texto ¿Olvidaste tu contraseña?
                 GestureDetector(
