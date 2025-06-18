@@ -1,6 +1,16 @@
 part of 'home_bloc.dart';
 
-@immutable
-sealed class HomeState {}
+sealed class HomeState extends Equatable {
+  const HomeState();
 
-final class HomeInitial extends HomeState {}
+  @override
+  List<Object?> get props => [];
+}
+
+final class HomeLoginView extends HomeState {}
+
+final class HomeLoadingView extends HomeState {}
+
+final class HomeFriendsView extends HomeState {}
+
+final class HomeErrorView extends HomeState {}
