@@ -23,11 +23,14 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             if (state is HomeLoginView) {
               return const LoginView();
-            } else if (state is HomeLogingView) {
+            } else if (state is HomeLoadingView) {
               return const LoadingView();
-            } else if (state is HomeFriendsView) {
-              return const FriendsView();
+            } else {
+              (HomeFriendsView) {
+                return const FriendsView();
+              };
             }
+            return Text('Algo no era verdadero');
           },
         ),
       ),

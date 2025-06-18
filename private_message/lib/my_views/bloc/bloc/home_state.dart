@@ -14,3 +14,5 @@ final class HomeLoadingView extends HomeState {}
 final class HomeFriendsView extends HomeState {}
 
 final class HomeErrorView extends HomeState {}
+
+final class HomeMessageView extends HomeState {}

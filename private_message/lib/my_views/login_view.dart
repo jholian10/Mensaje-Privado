@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:private_message/my_views/account_creation_view.dart';
+import 'package:private_message/my_views/friends_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -105,7 +106,15 @@ class _LoginViewState extends State<LoginView> {
 
                 // botón iniciar sesión
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // logica de botton de iniciar sesison
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FriendsView(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
